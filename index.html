@@ -806,6 +806,109 @@
     }
 
     /* ============================================
+       OFFICIAL INVITATION SECTION
+       ============================================ */
+    .invitation-section {
+      background: #f4ecdc;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .invitation-card {
+      display: grid;
+      grid-template-columns: minmax(320px, 420px) 1fr;
+      gap: 48px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid rgba(169, 119, 25, .32);
+      border-radius: 4px;
+      padding: 36px;
+      box-shadow: 0 25px 60px rgba(69, 25, 22, .12);
+    }
+    .invitation-poster-frame {
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      border: 1px solid rgba(169, 119, 25, .4);
+      box-shadow: 0 16px 40px rgba(69, 25, 22, .2);
+      cursor: pointer;
+      background: #e4d5be;
+    }
+    .invitation-poster-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .5s ease;
+    }
+    .invitation-poster-frame:hover img {
+      transform: scale(1.03);
+    }
+    .poster-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 10, 10, .45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .3s ease;
+      color: #fff;
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .invitation-poster-frame:hover .poster-overlay {
+      opacity: 1;
+    }
+    .invitation-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .invitation-meta h3 {
+      font: 500 clamp(1.6rem, 3vw, 2.3rem)/1.2 var(--serif);
+      color: var(--maroon);
+      margin: 4px 0 0;
+    }
+    .invitation-desc {
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.65;
+      margin: 0;
+    }
+    .invitation-details-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(76, 27, 28, .15);
+      border-bottom: 1px solid rgba(76, 27, 28, .15);
+    }
+    .inv-item {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+      gap: 12px;
+      font-size: .88rem;
+      align-items: baseline;
+    }
+    .inv-item strong {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: .72rem;
+      letter-spacing: .12em;
+    }
+    .inv-item span {
+      color: var(--text);
+      font-weight: 500;
+    }
+    .invitation-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    /* ============================================
        RESPONSIVE — TABLET & MOBILE
        ============================================ */
     @media (max-width: 860px) {
@@ -829,6 +932,15 @@
         gap: 20px 10px;
       }
       .event-strip-item { border-right: none; }
+      .invitation-card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 24px;
+      }
+      .invitation-poster-frame {
+        max-width: 380px;
+        margin: 0 auto;
+      }
     }
 
     @media (max-width: 620px) {
@@ -911,6 +1023,7 @@
         <a href="#tribute">The Tribute</a>
         <a href="#journey">Journey in Pictures</a>
         <a href="#gallery">Photo Archive</a>
+        <a href="#invitation">The Invitation</a>
         <a href="#program">Program of Events</a>
         <a class="nav-btn" href="https://forms.gle/xHoydT1CKy7JDxao9" target="_blank" rel="noopener">Register to Attend</a>
         <button class="nav-btn open-qr">QR Pass</button>
@@ -927,7 +1040,7 @@
     <section class="hero" id="top">
       <div class="wrap hero-layout">
         <div class="hero-content">
-          <span class="badge">JOINT SEND-OFF &amp; RETIREMENT CEREMONY • FRIDAY, 30TH OCTOBER 2026</span>
+          <span class="badge">JOINT SEND-OFF &amp; RETIREMENT CEREMONY • FRIDAY, 30 OCTOBER 2026</span>
           <p class="hero-kicker">Celebrating Distinguished Service, Excellence &amp; Enduring Legacies</p>
           <h1>HONOURING A LEGACY OF EXCELLENCE</h1>
           <p class="hero-honourees">Professor A. I. Mowete &amp; Professor T. O. Akinbulire</p>
@@ -938,7 +1051,7 @@
             <a class="btn btn-outline" href="https://forms.gle/xHoydT1CKy7JDxao9" target="_blank" rel="noopener">Register to Attend</a>
           </div>
           <div style="margin-top: 14px;">
-            <a class="hero-flyer-badge" id="view-flyer-btn" href="javascript:void(0)">
+            <a class="hero-flyer-badge" id="view-flyer-btn" href="#invitation">
               📜 View Official Invitation Poster →
             </a>
           </div>
@@ -971,13 +1084,13 @@
       <div class="wrap event-strip-grid">
         <div class="event-strip-item">
           <span class="strip-label">Date</span>
-          <strong>Friday, 30th October 2026</strong>
+          <strong>Friday, 30 October 2026</strong>
           <small>10:00 AM WAT</small>
         </div>
         <div class="event-strip-item">
           <span class="strip-label">Venue</span>
-          <strong>Engineering Lecture Theatre (ELT)</strong>
-          <small>Faculty of Engineering, UNILAG</small>
+          <strong>Federick Ige Laboratory Complex</strong>
+          <small>Dept. of Electrical/Electronics Engineering, UNILAG</small>
         </div>
         <div class="event-strip-item">
           <span class="strip-label">Occasion</span>
@@ -1064,14 +1177,66 @@
       </div>
     </section>
 
+    <!-- OFFICIAL INVITATION -->
+    <section class="section invitation-section" id="invitation">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Official Event Announcement</span>
+          <h2>The Invitation Poster</h2>
+          <div class="gold-rule"></div>
+          <p>Official retirement celebration invitation for Professor A. I. Mowete and Professor T. O. Akinbulire.</p>
+        </div>
+
+        <div class="invitation-card reveal">
+          <div class="invitation-poster-frame" id="poster-trigger" title="Click to view full size poster in Lightbox">
+            <img src="images/event-flyer.jpg" alt="Official Retirement Celebration Invitation Poster">
+            <div class="poster-overlay">
+              <span>Click to View Full Size 🔍</span>
+            </div>
+          </div>
+          <div class="invitation-meta">
+            <span class="badge">A JOINT SEND-OFF &amp; RETIREMENT CEREMONY</span>
+            <h3>Celebrating Distinguished Service, Excellence &amp; Enduring Legacies</h3>
+            <p class="invitation-desc">
+              The Department of Electrical &amp; Electronics Engineering, University of Lagos cordially invites colleagues, alumni, students, friends, and well-wishers to celebrate the meritorious careers and lasting legacies of <strong>Professor A. I. Mowete</strong> and <strong>Professor T. O. Akinbulire</strong>.
+            </p>
+
+            <div class="invitation-details-list">
+              <div class="inv-item">
+                <strong>Date</strong>
+                <span>Friday, 30 October 2026</span>
+              </div>
+              <div class="inv-item">
+                <strong>Time</strong>
+                <span>10:00 AM WAT</span>
+              </div>
+              <div class="inv-item">
+                <strong>Venue</strong>
+                <span>Federick Ige Laboratory Complex, Department of Electrical/Electronics Engineering, University of Lagos</span>
+              </div>
+              <div class="inv-item">
+                <strong>Highlights</strong>
+                <span>Tributes • Keynote Addresses • Goodwill Messages • Presentation of Commemorative Gifts</span>
+              </div>
+            </div>
+
+            <div class="invitation-actions">
+              <a class="btn btn-gold" href="https://forms.gle/xHoydT1CKy7JDxao9" target="_blank" rel="noopener">Register to Attend →</a>
+              <a class="btn btn-outline" href="images/event-flyer.jpg" download="UNILAG-Retirement-Celebration-Flyer.jpg">Download Official Poster (JPG) 📥</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- PROGRAM OF EVENTS -->
     <section class="section program" id="program">
       <div class="wrap">
         <div class="section-heading reveal">
-          <span class="eyebrow">Friday, 30th October 2026 · 10:00 AM WAT</span>
+          <span class="eyebrow">Friday, 30 October 2026 · 10:00 AM WAT</span>
           <h2>Joint Send-off Ceremony<br>&amp; Retirement Celebration</h2>
           <div class="gold-rule"></div>
-          <p>Engineering Lecture Theatre (ELT), Faculty of Engineering, University of Lagos</p>
+          <p>Federick Ige Laboratory Complex, Department of Electrical/Electronics Engineering, University of Lagos</p>
         </div>
         <div class="schedule" id="schedule"></div>
         <p class="program-note">Chief Host: Vice-Chancellor, University of Lagos • Host: Dean, Faculty of Engineering</p>
@@ -1203,7 +1368,7 @@
       category: 'Event & Invitation',
       year: 'Friday, 30 Oct 2026',
       title: 'Official Send-off Poster',
-      caption: 'A Joint Send-off & Retirement Ceremony at the Engineering Lecture Theatre (ELT), UNILAG.'
+      caption: 'A Joint Send-off & Retirement Ceremony at the Federick Ige Laboratory Complex, UNILAG.'
     }
   ];
 
@@ -1237,7 +1402,7 @@
 
   /* ---- OFFICIAL PROGRAM SCHEDULE ---- */
   const programSchedule = [
-    { title: 'Arrival & Registration of Guests',          time: '10:00 AM – 10:30 AM', description: 'Guests, alumni, and faculty arrive at the Engineering Lecture Theatre (ELT), receive event brochures, and are seated.' },
+    { title: 'Arrival & Registration of Guests',          time: '10:00 AM – 10:30 AM', description: 'Guests, alumni, and faculty arrive at the Federick Ige Laboratory Complex, receive event brochures, and are seated.' },
     { title: 'National Anthem & University of Lagos Anthem', time: '10:30 AM – 10:40 AM', description: 'Audience stands for the solemn rendition of the Nigerian National Anthem and the UNILAG Anthem.' },
     { title: 'Opening Prayer',                             time: '10:40 AM – 10:45 AM', description: 'Invocation of divine blessings and grace for the celebration.' },
     { title: 'Procession & High Table Protocol',           time: '10:45 AM – 11:00 AM', description: 'Prof. A. I. Mowete and Prof. T. O. Akinbulire, along with university leaders and dignitaries, are ushered to the High Table.' },
@@ -1332,10 +1497,20 @@
     filtered = photos;
     showPhoto(3);
   });
-  document.querySelector('#view-flyer-btn').addEventListener('click', () => {
-    filtered = photos;
-    showPhoto(9); // Flyer
+  // Hero flyer button scrolls smoothly to #invitation
+  document.querySelector('#view-flyer-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#invitation').scrollIntoView({ behavior: 'smooth' });
   });
+
+  // Poster trigger in #invitation opens fullscreen Lightbox
+  const posterTrig = document.querySelector('#poster-trigger');
+  if (posterTrig) {
+    posterTrig.addEventListener('click', () => {
+      filtered = photos;
+      showPhoto(9); // Flyer
+    });
+  }
 
   /* ---- MODAL MANAGEMENT ---- */
   function closeModal(m) {
@@ -1452,8 +1627,8 @@
       // Date & Venue
       ctx.fillStyle = '#5b3d36';
       ctx.font = '17px Arial, sans-serif';
-      ctx.fillText('Friday, 30th October 2026 • 10:00 AM WAT', 450, 465);
-      ctx.fillText('Engineering Lecture Theatre (ELT), UNILAG', 450, 492);
+      ctx.fillText('Friday, 30 October 2026 • 10:00 AM WAT', 450, 465);
+      ctx.fillText('Federick Ige Laboratory Complex, UNILAG', 450, 492);
 
       // QR Code frame
       ctx.fillStyle = '#fff';
