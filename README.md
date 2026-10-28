@@ -11,8 +11,8 @@ An editorial-grade, single-page retirement celebration and tribute website built
 - **Event**: Joint Send-off & Retirement Ceremony
 - **Honourees**: Professor A. I. Mowete & Professor T. O. Akinbulire
 - **Date**: Friday, 30 October 2026
-- **Time**: 10:00 AM WAT
-- **Venue**: Federick Ige Laboratory Complex, Department of Electrical/Electronics Engineering, University of Lagos
+- **Time**: 10:00 AM – 12:00 Noon (Arrival from 9:45 AM)
+- **Venue**: Frederick Ige Lab. Complex, Faculty of Engineering, University of Lagos
 - **Registration**: [Google Form Registration Link](https://forms.gle/xHoydT1CKy7JDxao9)
 
 ---
