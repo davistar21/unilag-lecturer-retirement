@@ -1,0 +1,1528 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f1e5">
+  <meta name="description" content="A joint tribute celebrating the distinguished careers, scholarship, and enduring legacies of Professor A. I. Mowete and Professor T. O. Akinbulire, Department of Electrical &amp; Electronics Engineering, University of Lagos.">
+  <title>Retirement Celebration | Prof. A. I. Mowete &amp; Prof. T. O. Akinbulire | UNILAG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       DESIGN TOKENS — UNILAG MAROON & GOLD PALETTE
+       ============================================ */
+    :root {
+      --ink: #f7f1e5;
+      --surface: #fffaf1;
+      --surface-card: #fdfbf7;
+      --maroon: #701e21;
+      --maroon-dark: #4d171a;
+      --maroon-deep: #3c1718;
+      --gold: #a97719;
+      --pale-gold: #d4a83b;
+      --text: #3c1718;
+      --muted: #786762;
+      --line: rgba(76, 27, 28, .16);
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* ============================================
+       RESET & BASE
+       ============================================ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.lock { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    img { display: block; max-width: 100%; }
+
+    /* ============================================
+       LAYOUT UTILITIES
+       ============================================ */
+    .wrap {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+    }
+    .eyebrow {
+      color: var(--gold);
+      font-size: .74rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .section { padding: 105px 0; }
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 52px;
+      text-align: center;
+    }
+    .section-heading h2 {
+      font: 500 clamp(2.2rem, 5vw, 3.8rem)/1.12 var(--serif);
+      color: #511b1d;
+      margin: 12px 0 16px;
+    }
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.02rem;
+    }
+    .gold-rule {
+      height: 2px;
+      width: 74px;
+      background: linear-gradient(90deg, transparent, #b58b37, transparent);
+      margin: 22px auto;
+    }
+
+    /* ============================================
+       SCROLL PROGRESS
+       ============================================ */
+    .scroll-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: #b58b37;
+      transform: scaleX(0);
+      transform-origin: left center;
+      z-index: 40;
+      pointer-events: none;
+      box-shadow: 0 0 10px rgba(181, 139, 55, .4);
+    }
+
+    /* ============================================
+       HEADER / NAVIGATION
+       ============================================ */
+    header {
+      height: 76px;
+      position: fixed;
+      z-index: 30;
+      inset: 0 0 auto;
+      background: rgba(250, 246, 236, .92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(76, 27, 28, .12);
+      box-shadow: 0 8px 30px rgba(69, 32, 22, .05);
+    }
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      color: var(--maroon);
+    }
+    .brand-title {
+      font: 600 .86rem var(--serif);
+      letter-spacing: .08em;
+      white-space: nowrap;
+    }
+    .brand-sub {
+      font-size: .62rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: .83rem;
+      color: #56191b;
+      font-weight: 500;
+    }
+    .navlinks a:hover { color: var(--gold); }
+    .navlinks .nav-btn {
+      border: 1px solid var(--gold);
+      background: rgba(169, 119, 25, .09);
+      border-radius: 999px;
+      color: #6a281d;
+      padding: 9px 18px;
+      font-size: .82rem;
+      font-weight: 600;
+      transition: all .2s ease;
+    }
+    .navlinks .nav-btn:hover {
+      background: var(--gold);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      background: none;
+      color: var(--maroon);
+      font-size: 1.5rem;
+      place-items: center;
+    }
+
+    /* ============================================
+       HERO
+       ============================================ */
+    .hero {
+      min-height: min(940px, 100svh);
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr);
+      align-items: center;
+      gap: clamp(30px, 5vw, 65px);
+      padding-top: 96px;
+      padding-bottom: 40px;
+    }
+    .hero-content {
+      padding: 40px 0;
+      max-width: 680px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(169, 119, 25, .32);
+      background: var(--surface);
+      padding: 8px 15px;
+      border-radius: 2px;
+      color: #762622;
+      font-size: .68rem;
+      letter-spacing: .14em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .hero-kicker {
+      font-size: .85rem;
+      color: #8a6a3b;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      margin: 24px 0 10px;
+      font-weight: 600;
+    }
+    .hero h1 {
+      font: 500 clamp(2.8rem, 5.5vw, 4.8rem)/1.02 var(--serif);
+      letter-spacing: -.03em;
+      color: #501819;
+      margin: 0 0 16px;
+    }
+    .hero-honourees {
+      font: 500 clamp(1.4rem, 2.6vw, 2.1rem)/1.25 var(--serif);
+      color: #8d671f;
+      margin: 0 0 6px;
+    }
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: #5b3d36;
+      letter-spacing: .02em;
+      margin: 14px 0 4px;
+      font-weight: 500;
+    }
+    .hero-dept {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.4;
+    }
+    .actions {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 3px;
+      font-size: .84rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      border: none;
+      transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+    .btn:active { transform: scale(.97); }
+    .btn-gold {
+      background: var(--maroon);
+      color: #fff9ef;
+    }
+    .btn-gold:hover {
+      background: #8d2b2c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(91, 38, 35, .18);
+    }
+    .btn-outline {
+      border: 1px solid rgba(91, 38, 35, .36);
+      background: rgba(255, 250, 241, .6);
+      color: #5b2623;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--maroon);
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(91, 38, 35, .14);
+    }
+
+    /* ---- HERO DUO FRAME ---- */
+    .hero-duo-frame {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      width: 100%;
+    }
+    .hero-card {
+      position: relative;
+      margin: 0;
+      border: 1px solid rgba(169, 119, 25, .38);
+      border-radius: 4px;
+      overflow: hidden;
+      background: #e4d5be;
+      box-shadow: 0 24px 60px rgba(69, 25, 22, .2);
+      transition: transform .35s ease, box-shadow .35s ease;
+      cursor: pointer;
+    }
+    .hero-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 70px rgba(69, 25, 22, .28);
+    }
+    .hero-card img {
+      width: 100%;
+      aspect-ratio: 3/4.2;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      transition: transform .6s ease;
+    }
+    .hero-card:hover img {
+      transform: scale(1.04);
+    }
+    .hero-card figcaption {
+      position: absolute;
+      inset: auto 0 0 0;
+      background: linear-gradient(180deg, rgba(30, 10, 10, 0) 0%, rgba(30, 10, 10, .85) 35%, rgba(20, 5, 5, .97) 100%);
+      color: #fff9ef;
+      padding: 28px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .hero-card-role {
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #f0d48a;
+      font-weight: 700;
+    }
+    .hero-card figcaption strong {
+      font: 600 .98rem var(--serif);
+      color: #fff;
+      line-height: 1.25;
+    }
+    .hero-card figcaption small {
+      font-size: .68rem;
+      color: #d8c8ba;
+      line-height: 1.25;
+    }
+    .hero-flyer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .74rem;
+      color: #8d671f;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    .hero-flyer-badge:hover { text-decoration: underline; color: var(--maroon); }
+
+    /* ============================================
+       EVENT DETAILS STRIP
+       ============================================ */
+    .event-strip {
+      background: var(--maroon-dark);
+      color: #fff9ef;
+      border-top: 1px solid rgba(212, 168, 59, .3);
+      border-bottom: 1px solid rgba(212, 168, 59, .3);
+      padding: 24px 0;
+    }
+    .event-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+    .event-strip-item {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      align-items: center;
+      border-right: 1px solid rgba(255, 255, 255, .1);
+    }
+    .event-strip-item:last-child {
+      border-right: none;
+    }
+    .strip-label {
+      color: var(--pale-gold);
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-weight: 700;
+    }
+    .event-strip-item strong {
+      font: 500 1.05rem var(--serif);
+      color: #fff;
+    }
+    .event-strip-item small {
+      color: #d8c8ba;
+      font-size: .74rem;
+    }
+
+    /* ============================================
+       TRIBUTE
+       ============================================ */
+    .tribute {
+      background: #fbf8f0;
+    }
+    .tribute-copy {
+      max-width: 780px;
+      margin: auto;
+      font: 400 clamp(1.12rem, 2vw, 1.34rem)/1.95 var(--serif);
+      color: #493735;
+    }
+    .tribute-copy p { margin: 0 0 28px; }
+    .tribute-copy .pull {
+      font-size: clamp(1.5rem, 3.2vw, 2.15rem);
+      line-height: 1.48;
+      color: #7b2927;
+      padding: 20px 0 20px 28px;
+      border-left: 2px solid #b58b37;
+      margin: 40px 0;
+      font-style: italic;
+    }
+    .honouree-block {
+      background: rgba(169, 119, 25, .06);
+      border: 1px solid rgba(169, 119, 25, .2);
+      border-radius: 3px;
+      padding: 26px 30px;
+      margin: 35px 0;
+      font-family: var(--sans);
+      font-size: .95rem;
+      line-height: 1.7;
+      color: #4d2325;
+    }
+    .honouree-block h4 {
+      font: 600 1.25rem var(--serif);
+      color: var(--maroon);
+      margin: 0 0 10px;
+    }
+    .signature {
+      color: #8d671f;
+      font-style: italic;
+    }
+
+    /* ============================================
+       REVEAL ANIMATION
+       ============================================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ============================================
+       CHAPTERS (Journey in Pictures)
+       ============================================ */
+    .chapters { background: #efe8db; }
+    .chapter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+    .chapter {
+      position: relative;
+      min-height: 440px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: #d8cab0;
+      cursor: pointer;
+    }
+    .chapter img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform .8s;
+    }
+    .chapter:hover img {
+      transform: scale(1.04);
+    }
+    .chapter::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(12, 10, 10, .94) 0%, rgba(12, 10, 10, .45) 45%, rgba(12, 10, 10, .05) 85%);
+      pointer-events: none;
+    }
+    .chapter-info {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      padding: 28px;
+      transition: transform .35s ease;
+    }
+    .chapter:hover .chapter-info { transform: translateY(-3px); }
+    .chapter-info .year {
+      font-size: .7rem;
+      color: #f0d48a;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .chapter-info h3 {
+      font: 500 1.7rem var(--serif);
+      margin: 8px 0;
+      color: #f8fafc;
+    }
+    .chapter-info p {
+      max-width: 440px;
+      color: #d8dee8;
+      font-size: .88rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* ============================================
+       PHOTO GALLERY
+       ============================================ */
+    .gallery-section { background: #faf7ef; }
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: -17px 0 34px;
+    }
+    .filter {
+      border: 1px solid rgba(76, 27, 28, .19);
+      color: #735e58;
+      background: transparent;
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: .78rem;
+      font-weight: 600;
+      transition: border-color .2s, color .2s, background .2s;
+    }
+    .filter.active,
+    .filter:hover {
+      border-color: var(--gold);
+      color: #6d2223;
+      background: rgba(169, 119, 25, .1);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .tile {
+      position: relative;
+      aspect-ratio: 1/1.1;
+      background: #e4d8c4;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+      color: white;
+    }
+    .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      transition: transform .5s ease;
+    }
+    .tile:hover img {
+      transform: scale(1.06);
+    }
+    .tile::after {
+      content: '';
+      position: absolute;
+      inset: 40% 0 0;
+      background: linear-gradient(transparent, rgba(14, 8, 8, .92));
+      pointer-events: none;
+    }
+    .tile-label {
+      position: absolute;
+      z-index: 1;
+      bottom: 14px;
+      left: 14px;
+      right: 12px;
+    }
+    .tile-label small {
+      color: #f0d48a;
+      font-size: .64rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .tile-label strong {
+      display: block;
+      font: 500 .98rem var(--serif);
+      line-height: 1.25;
+      margin-top: 3px;
+    }
+
+    /* ============================================
+       PROGRAM OF EVENTS
+       ============================================ */
+    .program { background: #efe8db; }
+    .schedule {
+      max-width: 820px;
+      margin: auto;
+      border-top: 1px solid rgba(76, 27, 28, .18);
+    }
+    .event {
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      gap: 22px;
+      padding: 24px 10px;
+      border-bottom: 1px solid rgba(76, 27, 28, .18);
+      align-items: start;
+    }
+    .event-index {
+      font: 500 1.5rem var(--serif);
+      color: var(--gold);
+    }
+    .event h3 {
+      font: 500 1.25rem var(--serif);
+      margin: 0 0 4px;
+      color: var(--text);
+    }
+    .event p {
+      font-size: .84rem;
+      color: var(--muted);
+      margin: 0;
+    }
+    .time {
+      color: #8d671f;
+      font-size: .78rem;
+      font-weight: 600;
+      margin-top: 8px;
+    }
+    .program-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: .8rem;
+      margin: 28px 0 0;
+    }
+
+    /* ============================================
+       FOOTER
+       ============================================ */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, .13);
+      padding: 48px 0 32px;
+      text-align: center;
+      background: var(--maroon-dark);
+    }
+    .footer-title {
+      font: 500 1.55rem var(--serif);
+      color: #f0d48a;
+      margin: 0 0 8px;
+    }
+    .footer-sub {
+      color: #f2e7d7;
+      font-size: .82rem;
+    }
+    .footer-copy {
+      font-size: .7rem;
+      color: #d5b4a4;
+      margin-top: 26px;
+    }
+
+    /* ============================================
+       MODALS
+       ============================================ */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(35, 12, 14, .82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal.open { display: flex; }
+    .modal-card {
+      position: relative;
+      max-width: min(840px, 95vw);
+      max-height: 90vh;
+      background: #fbf7ee;
+      border: 1px solid rgba(76, 27, 28, .18);
+      padding: 24px;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, .35);
+      color: #471b1b;
+      overflow-y: auto;
+    }
+    .modal-close {
+      position: absolute;
+      right: 14px;
+      top: 12px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(76, 27, 28, .2);
+      background: #fbf7ee;
+      color: #471b1b;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      transition: all .2s;
+    }
+    .modal-close:hover { border-color: var(--gold); background: #fff; }
+    .lightbox-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox-content img {
+      max-height: 70vh;
+      max-width: min(78vw, 780px);
+      object-fit: contain;
+      margin: auto;
+      border-radius: 2px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
+    }
+    .lightbox-content h3 {
+      font: 500 1.35rem var(--serif);
+      margin: 16px 0 4px;
+      text-align: center;
+    }
+    .lightbox-content p {
+      font-size: .85rem;
+      color: var(--muted);
+      margin: 0;
+      max-width: 780px;
+      text-align: center;
+    }
+    .lightbox-nav {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      inset: 46% 12px auto;
+      pointer-events: none;
+    }
+    .lightbox-nav button {
+      pointer-events: auto;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(76, 27, 28, .25);
+      background: rgba(251, 247, 238, .88);
+      color: #471b1b;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all .2s;
+    }
+    .lightbox-nav button:hover {
+      border-color: var(--gold);
+      background: #fff;
+    }
+    .qr-card {
+      width: min(440px, 93vw);
+      text-align: center;
+      padding: 38px 32px;
+    }
+    .qr-card h2 {
+      font: 500 2rem var(--serif);
+      margin: 8px 0;
+    }
+    .qr-card p {
+      font-size: .85rem;
+      color: var(--muted);
+    }
+    .qr-frame {
+      width: 220px;
+      height: 220px;
+      padding: 12px;
+      background: #fff;
+      margin: 24px auto;
+      border: 1px solid rgba(169, 119, 25, .3);
+    }
+    .qr-frame img {
+      width: 100%;
+      height: 100%;
+    }
+    .qr-url {
+      font-size: .7rem;
+      overflow-wrap: anywhere;
+      color: #7e5d20;
+      margin-bottom: 18px;
+    }
+    .qr-error {
+      display: none;
+      color: #b91c1c !important;
+    }
+
+    /* ============================================
+       RESPONSIVE — TABLET & MOBILE
+       ============================================ */
+    @media (max-width: 860px) {
+      .hero-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-top: 100px;
+        padding-bottom: 50px;
+      }
+      .hero-content { padding: 0; }
+      .hero-duo-frame {
+        max-width: 500px;
+        margin: 10px auto 0;
+      }
+      .gallery { grid-template-columns: repeat(3, 1fr); }
+      .chapter-grid { grid-template-columns: 1fr; }
+      .chapter { min-height: 380px; }
+      .section { padding: 80px 0; }
+      .event-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 10px;
+      }
+      .event-strip-item { border-right: none; }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 30px, 1160px); }
+      header { height: 68px; }
+      .brand-title { font-size: .78rem; }
+      .menu-toggle { display: grid; }
+      .navlinks {
+        display: none;
+        position: absolute;
+        top: 67px;
+        left: 0;
+        right: 0;
+        background: #faf6ec;
+        padding: 20px 24px 26px;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+      }
+      .navlinks.open { display: flex; }
+      .navlinks .nav-btn { text-align: center; }
+      .hero h1 { font-size: clamp(2.4rem, 11vw, 3.6rem); }
+      .hero-honourees { font-size: clamp(1.2rem, 5.5vw, 1.7rem); }
+      .hero-duo-frame {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-width: 380px;
+      }
+      .hero-card figcaption { padding: 18px 10px 10px; }
+      .hero-card figcaption strong { font-size: .84rem; }
+      .hero-card figcaption small { display: none; }
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .actions .btn { width: 100%; min-height: 52px; }
+      .badge { font-size: .62rem; letter-spacing: .1em; }
+      .gallery { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .tile-label { left: 10px; bottom: 10px; }
+      .tile-label strong { font-size: .88rem; }
+      .tile-label small { font-size: .58rem; }
+      .event { grid-template-columns: 44px 1fr; gap: 14px; padding: 18px 4px; }
+      .event-index { font-size: 1.25rem; }
+      .modal-card { padding: 18px; }
+      .qr-card { padding: 34px 20px; }
+    }
+
+    /* ============================================
+       REDUCED MOTION
+       ============================================ */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition: none !important;
+        animation: none !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      .scroll-progress { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ============================================
+       HEADER
+       ============================================ -->
+  <header>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top">
+        <span class="brand-title">PROF. MOWETE &amp; PROF. AKINBULIRE</span>
+        <span class="brand-sub">University of Lagos</span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="navlinks" id="navlinks">
+        <a href="#tribute">The Tribute</a>
+        <a href="#journey">Journey in Pictures</a>
+        <a href="#gallery">Photo Archive</a>
+        <a href="#program">Program of Events</a>
+        <a class="nav-btn" href="https://forms.gle/xHoydT1CKy7JDxao9" target="_blank" rel="noopener">Register to Attend</a>
+        <button class="nav-btn open-qr">QR Pass</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="wrap hero-layout">
+        <div class="hero-content">
+          <span class="badge">JOINT SEND-OFF &amp; RETIREMENT CEREMONY • FRIDAY, 30TH OCTOBER 2026</span>
+          <p class="hero-kicker">Celebrating Distinguished Service, Excellence &amp; Enduring Legacies</p>
+          <h1>HONOURING A LEGACY OF EXCELLENCE</h1>
+          <p class="hero-honourees">Professor A. I. Mowete &amp; Professor T. O. Akinbulire</p>
+          <p class="hero-tagline">Scholars. Mentors. Builders of Minds and Futures.</p>
+          <p class="hero-dept">Department of Electrical &amp; Electronics Engineering<br>Faculty of Engineering, University of Lagos</p>
+          <div class="actions">
+            <a class="btn btn-gold" href="#tribute">Explore The Tribute &nbsp; ↓</a>
+            <a class="btn btn-outline" href="https://forms.gle/xHoydT1CKy7JDxao9" target="_blank" rel="noopener">Register to Attend</a>
+          </div>
+          <div style="margin-top: 14px;">
+            <a class="hero-flyer-badge" id="view-flyer-btn" href="javascript:void(0)">
+              📜 View Official Invitation Poster →
+            </a>
+          </div>
+        </div>
+
+        <!-- DUO PORTRAIT DISPLAY -->
+        <div class="hero-duo-frame">
+          <figure class="hero-card" id="card-mowete" title="Click to view Professor A. I. Mowete">
+            <img src="images/mowete-portrait-smile.jpg" alt="Professor A. I. Mowete">
+            <figcaption>
+              <span class="hero-card-role">Honouree</span>
+              <strong>Prof. A. I. Mowete</strong>
+              <small>Electromagnetics &amp; Telecomms</small>
+            </figcaption>
+          </figure>
+          <figure class="hero-card" id="card-akinbulire" title="Click to view Professor T. O. Akinbulire">
+            <img src="images/akinbulire-doctoral-framed.jpg" alt="Professor T. O. Akinbulire">
+            <figcaption>
+              <span class="hero-card-role">Honouree</span>
+              <strong>Prof. T. O. Akinbulire</strong>
+              <small>Power Systems &amp; Electrical Machines</small>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT DETAILS STRIP -->
+    <section class="event-strip" aria-label="Event Details Summary">
+      <div class="wrap event-strip-grid">
+        <div class="event-strip-item">
+          <span class="strip-label">Date</span>
+          <strong>Friday, 30th October 2026</strong>
+          <small>10:00 AM WAT</small>
+        </div>
+        <div class="event-strip-item">
+          <span class="strip-label">Venue</span>
+          <strong>Engineering Lecture Theatre (ELT)</strong>
+          <small>Faculty of Engineering, UNILAG</small>
+        </div>
+        <div class="event-strip-item">
+          <span class="strip-label">Occasion</span>
+          <strong>Joint Send-off Ceremony</strong>
+          <small>EEE Department Celebration</small>
+        </div>
+        <div class="event-strip-item">
+          <span class="strip-label">Attendance</span>
+          <strong>Registration Required</strong>
+          <small><a href="https://forms.gle/xHoydT1CKy7JDxao9" target="_blank" rel="noopener" style="text-decoration:underline;color:#f0d48a;">Register Here →</a></small>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRIBUTE -->
+    <section class="section tribute" id="tribute">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">With honour, gratitude &amp; admiration</span>
+          <h2>Two Lives That Continue to Inspire</h2>
+          <div class="gold-rule"></div>
+          <p>A celebration of scholarship, dedication, mentorship and the thousands of engineers whose careers were forged along the way.</p>
+        </div>
+        <article class="tribute-copy">
+          <p class="reveal">Some people teach lessons; others inspire lives. Some impart knowledge; others ignite the passion to discover, innovate, and excel. And a rare few do both, leaving footprints that time cannot erase.</p>
+          <p class="reveal">Today, the University of Lagos, the Faculty of Engineering, and the Department of Electrical &amp; Electronics Engineering celebrate two titan scholars, dedicated teachers, inspiring mentors, and enduring pillars of academic distinction: <strong>Professor A. I. Mowete</strong> and <strong>Professor T. O. Akinbulire</strong>.</p>
+          
+          <div class="honouree-block reveal">
+            <h4>Professor A. I. Mowete</h4>
+            <p style="margin:0;">A master of electromagnetic theory and telecommunications engineering whose intellectual rigour, scholarly eloquence, and warm mentorship have guided undergraduates, postgraduates, and academic colleagues across generations. His presence in the lecture hall transformed complex principles into timeless wisdom.</p>
+          </div>
+
+          <div class="honouree-block reveal">
+            <h4>Professor T. O. Akinbulire</h4>
+            <p style="margin:0;">A stalwart in electric power systems, machines, and energy engineering whose steadfast dedication to duty, research excellence, and practical problem-solving has strengthened the department's foundations and empowered engineers serving across Nigeria and around the globe.</p>
+          </div>
+
+          <p class="reveal">Through years of selfless service, both professors have contributed not merely to the advancement of technological knowledge, but also to the shaping of character, the nurturing of talent, and the development of future generations of industry leaders, innovators, and educators.</p>
+          
+          <blockquote class="pull reveal">"The influence of great teachers never retires."</blockquote>
+          
+          <p class="reveal">Their legacy is not measured solely by the thousands of lectures delivered, research papers published, or academic milestones attained. It is equally reflected in the alumni who lead major technological sectors worldwide, the junior faculty they encouraged, the lives they touched, and the enduring culture of excellence they helped cement at UNILAG.</p>
+          
+          <p class="reveal">As we honour them today, we recognise that while a formal chapter of institutional service may draw to a close, their impact will forever resonate in laboratories, lecture halls, national infrastructure, and every future innovation shaped by their teachings.</p>
+          
+          <p class="reveal">Professor Mowete and Professor Akinbulire, your service has been a gift, your mentorship a blessing, and your legacy an enduring inspiration to the entire University of Lagos community.</p>
+          
+          <p class="reveal">May this golden new chapter bring each of you abundant joy, sound health, renewed peace, well-deserved rest, and the profound fulfilment of seeing the seeds you have sown flourish across the nation and the world.</p>
+          
+          <p class="signature reveal">Congratulations, Professor A. I. Mowete &amp; Professor T. O. Akinbulire!<br><em>With deepest gratitude from the Department of Electrical &amp; Electronics Engineering, University of Lagos.</em></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHAPTERS — Journey in Pictures -->
+    <section class="section chapters" id="journey">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">A journey in pictures</span>
+          <h2>Moments That Made a Legacy</h2>
+          <div class="gold-rule"></div>
+          <p>From youthful service and academic convocations to decades of faculty leadership and cherished family milestones.</p>
+        </div>
+        <div class="chapter-grid" id="chapters"></div>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="section gallery-section" id="gallery">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">The photographic archive</span>
+          <h2>Preserved in Memory</h2>
+          <div class="gold-rule"></div>
+          <p>Explore the moments, portraits, milestones, and invitation memorabilia.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter photographs">
+          <button class="filter active" data-filter="All">All Photographs</button>
+          <button class="filter" data-filter="Prof. A. I. Mowete">Prof. A. I. Mowete</button>
+          <button class="filter" data-filter="Prof. T. O. Akinbulire">Prof. T. O. Akinbulire</button>
+          <button class="filter" data-filter="Event &amp; Invitation">Event &amp; Invitation</button>
+        </div>
+        <div class="gallery" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- PROGRAM OF EVENTS -->
+    <section class="section program" id="program">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Friday, 30th October 2026 · 10:00 AM WAT</span>
+          <h2>Joint Send-off Ceremony<br>&amp; Retirement Celebration</h2>
+          <div class="gold-rule"></div>
+          <p>Engineering Lecture Theatre (ELT), Faculty of Engineering, University of Lagos</p>
+        </div>
+        <div class="schedule" id="schedule"></div>
+        <p class="program-note">Chief Host: Vice-Chancellor, University of Lagos • Host: Dean, Faculty of Engineering</p>
+        <div style="text-align:center;margin-top:34px;">
+          <a class="btn btn-gold" href="https://forms.gle/xHoydT1CKy7JDxao9" target="_blank" rel="noopener">Register to Attend on Google Forms →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer>
+    <div class="wrap">
+      <p class="footer-title">Celebrating Distinguished Service, Excellence &amp; Enduring Legacies</p>
+      <div class="footer-sub">Professor A. I. Mowete &amp; Professor T. O. Akinbulire</div>
+      <div class="footer-sub" style="margin-top:4px;">Department of Electrical &amp; Electronics Engineering · University of Lagos</div>
+      <div class="footer-copy">With honour, gratitude, and our very best wishes. © 2026 University of Lagos.</div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       LIGHTBOX MODAL
+       ============================================ -->
+  <div class="modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph viewer">
+    <div class="modal-card lightbox-content">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div class="lightbox-nav">
+        <button id="prev-photo" aria-label="Previous photo">‹</button>
+        <button id="next-photo" aria-label="Next photo">›</button>
+      </div>
+      <div id="lightbox-media"></div>
+      <h3 id="lightbox-title"></h3>
+      <p id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- ============================================
+       QR MODAL
+       ============================================ -->
+  <div class="modal" id="qr-modal" role="dialog" aria-modal="true" aria-labelledby="qr-title">
+    <div class="modal-card qr-card">
+      <button class="modal-close" aria-label="Close">×</button>
+      <span class="eyebrow">Share the celebration</span>
+      <h2 id="qr-title">Venue QR Pass</h2>
+      <p>Scan to view the tribute website and event program on your smartphone.</p>
+      <div class="qr-frame">
+        <img id="qr-image" alt="QR code linking to this retirement tribute website">
+      </div>
+      <p class="qr-error" id="qr-error">QR code could not load. Check your connection and try again.</p>
+      <div class="qr-url" id="qr-url"></div>
+      <a class="btn btn-gold" id="download-qr" download="unilag-retirement-qr-card.png" href="#" hidden>Download Printable QR Card</a>
+    </div>
+  </div>
+
+  <!-- ============================================
+       JAVASCRIPT
+       ============================================ -->
+  <script>
+  /* ---- AUTHORITATIVE PHOTO ARCHIVE ---- */
+  const photos = [
+    {
+      src: 'images/mowete-portrait-smile.jpg',
+      category: 'Prof. A. I. Mowete',
+      year: 'Distinguished Scholar',
+      title: 'Professor A. I. Mowete',
+      caption: 'Distinguished Professor of Electrical & Electronics Engineering, University of Lagos.'
+    },
+    {
+      src: 'images/mowete-portrait-seated.jpg',
+      category: 'Prof. A. I. Mowete',
+      year: 'Faculty Leadership',
+      title: 'Wisdom in Reflection',
+      caption: 'Prof. A. I. Mowete reflecting on decades of teaching, research, and scholarly mentorship.'
+    },
+    {
+      src: 'images/mowete-portrait-standing.jpg',
+      category: 'Prof. A. I. Mowete',
+      year: 'Academic Excellence',
+      title: 'A Pillar of the Department',
+      caption: 'A leader, mentor, and respected pillar of the UNILAG engineering academic community.'
+    },
+    {
+      src: 'images/akinbulire-doctoral-framed.jpg',
+      category: 'Prof. T. O. Akinbulire',
+      year: 'Doctoral Conformance',
+      title: 'Professor T. O. Akinbulire',
+      caption: 'Formal doctoral portrait in academic regalia, University of Lagos.'
+    },
+    {
+      src: 'images/akinbulire-doctoral-cap.jpg',
+      category: 'Prof. T. O. Akinbulire',
+      year: 'Academic Convocation',
+      title: 'Scholarly Attainment',
+      caption: 'Celebrating academic milestones in full convocation regalia and academic gown.'
+    },
+    {
+      src: 'images/akinbulire-wedding-celebration.jpg',
+      category: 'Prof. T. O. Akinbulire',
+      year: 'Family & Joy',
+      title: 'A Cherished Family Milestone',
+      caption: 'Sharing a joyous, proud celebration of family and gratitude in church.'
+    },
+    {
+      src: 'images/akinbulire-nysc.jpg',
+      category: 'Prof. T. O. Akinbulire',
+      year: 'Youth Service',
+      title: 'Youth Corps Service Days',
+      caption: 'Proudly serving the nation during National Youth Service Corps (NYSC) — early dedication to duty.'
+    },
+    {
+      src: 'images/akinbulire-student-days.jpg',
+      category: 'Prof. T. O. Akinbulire',
+      year: 'Early Years',
+      title: 'The Formative Years',
+      caption: 'Early student days, the beginning of a lifelong pursuit of engineering knowledge.'
+    },
+    {
+      src: 'images/akinbulire-youth-wildlife.jpg',
+      category: 'Prof. T. O. Akinbulire',
+      year: 'Field Excursion',
+      title: 'Moments of Exploration',
+      caption: 'Youthful excursion to a wildlife reserve during early adventurous years.'
+    },
+    {
+      src: 'images/event-flyer.jpg',
+      category: 'Event & Invitation',
+      year: 'Friday, 30 Oct 2026',
+      title: 'Official Send-off Poster',
+      caption: 'A Joint Send-off & Retirement Ceremony at the Engineering Lecture Theatre (ELT), UNILAG.'
+    }
+  ];
+
+  /* ---- CHAPTER MILESTONES (Journey in Pictures) ---- */
+  const chapterItems = [
+    {
+      photo: photos[6], // NYSC
+      year: 'The Formative Years',
+      title: 'Answering the Call of Service',
+      copy: 'Discipline, devotion, and patriotic pride during National Youth Service Corps (NYSC), laying the foundation for a lifelong calling in higher education.'
+    },
+    {
+      photo: photos[3], // Doctoral
+      year: 'Doctoral Attainment',
+      title: 'The Ascent to Higher Scholarship',
+      copy: 'Adorned in academic regalia, celebrating the rigour and triumph of doctoral attainment and scholarly research at the University of Lagos.'
+    },
+    {
+      photo: photos[0], // Mowete portrait
+      year: 'Distinguished Professorship',
+      title: 'Wisdom That Shaped Generations',
+      copy: 'Inspiring thousands of engineering students across four decades through deep mastery of electromagnetic theory, telecommunications, and selfless mentorship.'
+    },
+    {
+      photo: photos[5], // Wedding
+      year: 'Treasured Milestones',
+      title: 'A Life Lived in Grace and Faith',
+      copy: 'Surrounded by family, loved ones, and community, celebrating life’s most precious personal and spiritual blessings.'
+    }
+  ];
+
+  /* ---- OFFICIAL PROGRAM SCHEDULE ---- */
+  const programSchedule = [
+    { title: 'Arrival & Registration of Guests',          time: '10:00 AM – 10:30 AM', description: 'Guests, alumni, and faculty arrive at the Engineering Lecture Theatre (ELT), receive event brochures, and are seated.' },
+    { title: 'National Anthem & University of Lagos Anthem', time: '10:30 AM – 10:40 AM', description: 'Audience stands for the solemn rendition of the Nigerian National Anthem and the UNILAG Anthem.' },
+    { title: 'Opening Prayer',                             time: '10:40 AM – 10:45 AM', description: 'Invocation of divine blessings and grace for the celebration.' },
+    { title: 'Procession & High Table Protocol',           time: '10:45 AM – 11:00 AM', description: 'Prof. A. I. Mowete and Prof. T. O. Akinbulire, along with university leaders and dignitaries, are ushered to the High Table.' },
+    { title: 'Welcome Address by Chief Host',              time: '11:00 AM – 11:15 AM', description: 'Opening remarks welcoming dignitaries, colleagues, alumni, and guests to this historic joint celebration.' },
+    { title: 'Remarks by Dean, Faculty of Engineering',    time: '11:15 AM – 11:30 AM', description: 'The Dean reflects on the monumental academic and institutional contributions of both honourees.' },
+    { title: 'Remarks by Head of Department (EEE)',        time: '11:30 AM – 11:45 AM', description: 'Reflections on the indelible legacy, mentorship, and leadership left in the Electrical & Electronics Department.' },
+    { title: 'Keynote Addresses & Academic Footprints',    time: '11:45 AM – 12:30 PM', description: 'Highlighting the breakthrough research, publications, and engineering innovations championed by the celebrants.' },
+    { title: 'Goodwill Messages & Heartfelt Tributes',      time: '12:30 PM – 1:15 PM',  description: 'Colleagues, alumni, students, and family members deliver personal reflections and gratitude.' },
+    { title: 'Presentation of Commemorative Gifts',        time: '1:15 PM – 1:35 PM',   description: 'Presentation of honours, plaques, and commemorative gifts in recognition of distinguished service.' },
+    { title: 'Responses by the Celebrants',                time: '1:35 PM – 2:00 PM',   description: 'Prof. A. I. Mowete and Prof. T. O. Akinbulire deliver their valedictory reflections and vote of gratitude.' },
+    { title: 'Vote of Thanks, Benediction & Reception',    time: '2:00 PM Onwards',     description: 'Closing prayer, celebratory group photographs, and reception for all invited guests.' }
+  ];
+
+  /* ---- ESCAPE UTILITY ---- */
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  /* ---- RENDER CHAPTERS ---- */
+  document.querySelector('#chapters').innerHTML = chapterItems.map((item, i) =>
+    `<article class="chapter reveal" data-chapter-index="${i}">
+      <img loading="lazy" src="${item.photo.src}" alt="${esc(item.title)}">
+      <div class="chapter-info">
+        <span class="year">${esc(item.year)}</span>
+        <h3>${esc(item.title)}</h3>
+        <p>${esc(item.copy)}</p>
+      </div>
+    </article>`
+  ).join('');
+
+  document.querySelectorAll('.chapter').forEach(card => {
+    card.addEventListener('click', () => {
+      const idx = +card.dataset.chapterIndex;
+      const targetPhoto = chapterItems[idx].photo;
+      const photoIdx = photos.indexOf(targetPhoto);
+      if (photoIdx !== -1) showPhoto(photoIdx);
+    });
+  });
+
+  /* ---- RENDER GALLERY ---- */
+  const grid = document.querySelector('#gallery-grid');
+  let filtered = photos;
+  let current = 0;
+
+  function renderGallery() {
+    grid.innerHTML = filtered.map((p, i) =>
+      `<button class="tile" data-index="${i}" aria-label="View ${esc(p.title)}">
+        <img loading="lazy" src="${p.src}" alt="${esc(p.title)}">
+        <span class="tile-label">
+          <small>${esc(p.year)}</small>
+          <strong>${esc(p.title)}</strong>
+        </span>
+      </button>`
+    ).join('');
+    grid.querySelectorAll('.tile').forEach(b =>
+      b.addEventListener('click', () => showPhoto(+b.dataset.index))
+    );
+  }
+  renderGallery();
+
+  /* ---- GALLERY FILTERS ---- */
+  document.querySelectorAll('.filter').forEach(b =>
+    b.addEventListener('click', () => {
+      document.querySelector('.filter.active').classList.remove('active');
+      b.classList.add('active');
+      const f = b.dataset.filter;
+      filtered = f === 'All' ? photos : photos.filter(p => p.category === f);
+      renderGallery();
+    })
+  );
+
+  /* ---- LIGHTBOX ---- */
+  const lightbox = document.querySelector('#lightbox');
+  const lbMedia = document.querySelector('#lightbox-media');
+  const lbTitle = document.querySelector('#lightbox-title');
+  const lbCaption = document.querySelector('#lightbox-caption');
+
+  function showPhoto(i) {
+    current = (i + filtered.length) % filtered.length;
+    const p = filtered[current];
+    lbMedia.innerHTML = `<img src="${p.src}" alt="${esc(p.title)}">`;
+    lbTitle.textContent = p.title;
+    lbCaption.textContent = p.caption;
+    lightbox.classList.add('open');
+    document.body.classList.add('lock');
+  }
+
+  // Hero card triggers
+  document.querySelector('#card-mowete').addEventListener('click', () => {
+    filtered = photos;
+    showPhoto(0);
+  });
+  document.querySelector('#card-akinbulire').addEventListener('click', () => {
+    filtered = photos;
+    showPhoto(3);
+  });
+  document.querySelector('#view-flyer-btn').addEventListener('click', () => {
+    filtered = photos;
+    showPhoto(9); // Flyer
+  });
+
+  /* ---- MODAL MANAGEMENT ---- */
+  function closeModal(m) {
+    m.classList.remove('open');
+    if (!document.querySelector('.modal.open')) {
+      document.body.classList.remove('lock');
+    }
+  }
+
+  document.querySelectorAll('.modal-close').forEach(b =>
+    b.addEventListener('click', () => closeModal(b.closest('.modal')))
+  );
+
+  [lightbox, document.querySelector('#qr-modal')].forEach(m =>
+    m.addEventListener('click', e => { if (e.target === m) closeModal(m); })
+  );
+
+  document.querySelector('#prev-photo').onclick = () => showPhoto(current - 1);
+  document.querySelector('#next-photo').onclick = () => showPhoto(current + 1);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') document.querySelectorAll('.modal.open').forEach(closeModal);
+    if (lightbox.classList.contains('open') && e.key === 'ArrowLeft') showPhoto(current - 1);
+    if (lightbox.classList.contains('open') && e.key === 'ArrowRight') showPhoto(current + 1);
+  });
+
+  /* ---- RENDER SCHEDULE ---- */
+  document.querySelector('#schedule').innerHTML = programSchedule.map((e, i) =>
+    `<article class="event reveal">
+      <div class="event-index">${String(i + 1).padStart(2, '0')}</div>
+      <div>
+        <h3>${esc(e.title)}</h3>
+        <p>${esc(e.description || '')}</p>
+        <div class="time">${esc(e.time)}</div>
+      </div>
+    </article>`
+  ).join('');
+
+  /* ---- QR CODE & VENUE PASS ---- */
+  const PUBLIC_SITE_URL = window.location.href;
+  const qrModal = document.querySelector('#qr-modal');
+
+  document.querySelectorAll('.open-qr').forEach(b =>
+    b.addEventListener('click', () => {
+      const url = PUBLIC_SITE_URL;
+      const img = document.querySelector('#qr-image');
+      const qr = `https://api.qrserver.com/v1/create-qr-code/?size=520x520&margin=12&data=${encodeURIComponent(url)}`;
+      img.crossOrigin = 'anonymous';
+      img.src = qr;
+      img.onload = () => {
+        document.querySelector('#qr-error').style.display = 'none';
+        document.querySelector('#download-qr').href = qr;
+        document.querySelector('#download-qr').hidden = false;
+      };
+      img.onerror = () => document.querySelector('#qr-error').style.display = 'block';
+      document.querySelector('#qr-url').textContent = url;
+      qrModal.classList.add('open');
+      document.body.classList.add('lock');
+    })
+  );
+
+  /* Downloadable Printable QR Card via Canvas */
+  document.querySelector('#download-qr').addEventListener('click', async e => {
+    e.preventDefault();
+    try {
+      const qr = document.querySelector('#qr-image');
+      if (!qr.complete || !qr.naturalWidth) throw new Error('QR image unavailable');
+      const canvas = document.createElement('canvas');
+      canvas.width = 900; canvas.height = 1240;
+      const ctx = canvas.getContext('2d');
+
+      // Background
+      ctx.fillStyle = '#f7f1e5';
+      ctx.fillRect(0, 0, 900, 1240);
+
+      // Gold Borders
+      ctx.strokeStyle = '#a97719';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(30, 30, 840, 1180);
+      ctx.strokeStyle = '#701e21';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(38, 38, 824, 1164);
+
+      // Header
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#701e21';
+      ctx.font = 'bold 24px Georgia, serif';
+      ctx.fillText('UNIVERSITY OF LAGOS', 450, 105);
+
+      ctx.fillStyle = '#8a6a3b';
+      ctx.font = 'bold 15px Arial, sans-serif';
+      ctx.fillText('FACULTY OF ENGINEERING • DEPT. OF ELECTRICAL & ELECTRONICS', 450, 138);
+
+      ctx.fillStyle = '#4d171a';
+      ctx.font = 'bold 36px Georgia, serif';
+      ctx.fillText('A JOINT SEND-OFF &', 450, 210);
+      ctx.fillText('RETIREMENT CEREMONY', 450, 255);
+
+      // Gold Rule
+      ctx.fillStyle = '#d4af37';
+      ctx.fillRect(370, 280, 160, 3);
+
+      // Honourees
+      ctx.fillStyle = '#701e21';
+      ctx.font = 'bold 28px Georgia, serif';
+      ctx.fillText('PROFESSOR A. I. MOWETE', 450, 340);
+      ctx.fillStyle = '#8a6a3b';
+      ctx.font = 'italic 20px Georgia, serif';
+      ctx.fillText('&', 450, 375);
+      ctx.fillStyle = '#701e21';
+      ctx.font = 'bold 28px Georgia, serif';
+      ctx.fillText('PROFESSOR T. O. AKINBULIRE', 450, 415);
+
+      // Date & Venue
+      ctx.fillStyle = '#5b3d36';
+      ctx.font = '17px Arial, sans-serif';
+      ctx.fillText('Friday, 30th October 2026 • 10:00 AM WAT', 450, 465);
+      ctx.fillText('Engineering Lecture Theatre (ELT), UNILAG', 450, 492);
+
+      // QR Code frame
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(205, 530, 490, 490);
+      ctx.strokeStyle = '#a97719';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(205, 530, 490, 490);
+      ctx.drawImage(qr, 220, 545, 460, 460);
+
+      // Footer Call to Action
+      ctx.fillStyle = '#701e21';
+      ctx.font = 'bold 22px Arial, sans-serif';
+      ctx.fillText('SCAN TO EXPLORE THE TRIBUTE & PHOTOS', 450, 1085);
+      ctx.fillStyle = '#786762';
+      ctx.font = '15px Arial, sans-serif';
+      ctx.fillText('A Teacher. A Mentor. A Scholar. A Legacy.', 450, 1125);
+
+      canvas.toBlob(blob => {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'unilag-retirement-qr-pass.png';
+        link.click();
+        URL.revokeObjectURL(link.href);
+      }, 'image/png');
+    } catch (err) {
+      window.open(document.querySelector('#qr-image').src, '_blank', 'noopener');
+    }
+  });
+
+  /* ---- INTERSECTION OBSERVER (reveal on scroll) ---- */
+  const observer = new IntersectionObserver(entries =>
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    }),
+    { threshold: .1 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ---- SCROLL PROGRESS ---- */
+  let progressTick = false;
+  window.addEventListener('scroll', () => {
+    if (!progressTick) {
+      progressTick = true;
+      requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        document.querySelector('.scroll-progress').style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+        progressTick = false;
+      });
+    }
+  }, { passive: true });
+
+  /* ---- MOBILE MENU ---- */
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navlinks = document.querySelector('#navlinks');
+  menuToggle.onclick = () => {
+    const open = navlinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+    menuToggle.textContent = open ? '×' : '☰';
+  };
+  navlinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    })
+  );
+  </script>
+</body>
+</html>
