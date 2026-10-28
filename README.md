@@ -36,12 +36,9 @@ An editorial-grade, single-page retirement celebration and tribute website built
      - `Event & Invitation`
    - Fullscreen Lightbox viewer with Next / Previous navigation and keyboard shortcuts (`Esc`, `ArrowLeft`, `ArrowRight`).
 6. **Program of Events Schedule**:
-   - Complete 12-item timeline detailing the ceremony protocol, anthems, tributes, keynote speeches, presentation of gifts, and celebrants' responses.
-7. **Dynamic Venue QR Code & Printable Card**:
-   - Generates a live QR code linking directly to the site for event guests to scan on mobile.
-   - In-browser HTML5 Canvas generator to download a printable UNILAG-branded QR pass card.
-8. **Fully Responsive**:
-   - Tailored layouts for widescreen desktops, tablets, and mobile smartphones with a slide-out navigation menu.
+   - Complete 17-item timeline from the official Order of Programme, detailing timings from 9:45 AM arrival to closing remarks, responsibility leads, and dignitaries.
+7. **Fully Responsive**:
+   - Tailored layouts for widescreen desktops, laptops, tablets, and mobile smartphones with a smooth animated navigation drawer and animated hamburger toggle.
 
 ---
 
